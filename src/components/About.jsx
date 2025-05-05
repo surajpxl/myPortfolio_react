@@ -33,8 +33,9 @@ const About = () => {
             <img
               src={profileImg}
               alt="Profile"
-              className="w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-xl object-cover shake-animation hover:animate-shake"
+              className="w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-xl object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
             />
+
           </div>
 
           {/* Description */}
