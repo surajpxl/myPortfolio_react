@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import Typed from 'typed.js';
+import { FaFacebook, FaTwitter, FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa'; // Import social media icons
 import wallpaper from '../assets/images/wallpaper.jpg'; // Replace with your local image or Pexels link
 import animatedPNG from '../assets/images/bgg4.png'; // Path to your animated PNG
 
@@ -28,8 +29,7 @@ const Home = () => {
       }}
     >
       <div className="w-full ml-[20px] sm:ml-10 md:ml-20 max-w-screen-xl pl-4 sm:px-8 md:px-16 flex flex-col items-start text-left text-white">
-
-       <div className="text-3xl sm:text-4xl  md:text-5xl font-semibold mb-2">Hi,</div>
+        <div className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-2">Hi,</div>
         <div className="text-5xl sm:text-6xl md:text-6xl py-3 font-bold my-2">
           I'm <span className="text-white">Suraj</span>
         </div>
@@ -42,17 +42,31 @@ const Home = () => {
         >
           Contact
         </a>
+
+        {/* Social Media Icons */}
+        <div className="flex space-x-6 mt-16">
+          <a href="https://www.instagram.com/codexsuraj/" target="_blank" rel="noopener noreferrer" className="text-2xl text-white hover:text-red-600 transition duration-300">
+            <FaInstagram />
+          </a>
+          <a href="https://x.com/codexsuraj" target="_blank" rel="noopener noreferrer" className="text-2xl text-white hover:text-blue-400 transition duration-300">
+            <FaTwitter />
+          </a>
+          <a href="https://www.linkedin.com/in/suraj-gupta-profilepxl/" target="_blank" rel="noopener noreferrer" className="text-2xl text-white hover:text-blue-700 transition duration-300">
+            <FaLinkedin />
+          </a>
+          <a href="https://github.in/surajpxl/" target="_blank" rel="noopener noreferrer" className="text-2xl text-white hover:text-gray-800 transition duration-300">
+            <FaGithub />
+          </a>
+        </div>
       </div>
 
       {/* Right side animated PNG */}
       <div className="hidden md:flex w-full md:w-1/2 justify-center items-center">
-        
-          <img
-            src={animatedPNG} // Use your animated PNG here
-            alt="Web Developer Animation"
-            className="w-full max-w-xs md:max-w-sm opacity-90 hover:opacity-100 transition duration-500 mr-50"
-          />
-       
+        <img
+          src={animatedPNG} // Use your animated PNG here
+          alt="Web Developer Animation"
+          className="w-full max-w-xs md:max-w-sm opacity-90 hover:opacity-100 transition duration-500 mr-50"
+        />
       </div>
     </section>
   );
