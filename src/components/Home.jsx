@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Typed from 'typed.js';
 import wallpaper from '../assets/images/wallpaper.jpg'; // Replace with your local image or Pexels link
-import animatedPNG from '../assets/images/ani2.png'; // Path to your animated PNG
+import animatedPNG from '../assets/images/bgg4.png'; // Path to your animated PNG
 
 const Home = () => {
   const typingRef = useRef(null);
@@ -50,7 +50,7 @@ const Home = () => {
           <img
             src={animatedPNG} // Use your animated PNG here
             alt="Web Developer Animation"
-            className="w-full max-w-xs md:max-w-sm opacity-90 hover:opacity-100 transition duration-500 mr-45"
+            className="w-full max-w-xs md:max-w-sm opacity-90 hover:opacity-100 transition duration-500 mr-50"
           />
        
       </div>
