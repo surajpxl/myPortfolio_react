@@ -21,7 +21,7 @@ const About = () => {
   }, []);
 
   return (
-    <section className="py-16 w-full bg-white" id="about">
+    <section className="py-16 w-full lg:h-180 bg-white" id="about">
       <div className="max-w-6xl mx-auto px-4 mt-10">
         <h2 className="text-4xl font-bold text-center underline mb-12">
           About me

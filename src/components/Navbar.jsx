@@ -157,7 +157,7 @@ const Navbar = () => {
               Website Designing
             </Link>
             <Link
-              to="/#services"
+              to="/#maint"
               smooth
               className="block py-2 text-white hover:text-red-300"
               onClick={() => setIsMenuOpen(false)}
@@ -165,12 +165,12 @@ const Navbar = () => {
               Website Maintenance
             </Link>
             <Link
-              to="/#services"
+              to="/#free"
               smooth
               className="block py-2 text-white hover:text-red-300"
               onClick={() => setIsMenuOpen(false)}
             >
-              SEO Optimization
+              Freelance
             </Link>
           </div>
 

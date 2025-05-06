@@ -3,7 +3,7 @@ import React from 'react';
 const Services = () => {
   return (
     <section
-      className="w-full min-h-screen bg-gray-50 py-16 px-4"
+      className="w-full min-h-screen md:min-h-0 lg:h-180 bg-gray-50 py-16 px-4"
       id="services"
     >
       <div className="max-w-7xl mx-auto">
@@ -29,7 +29,7 @@ const Services = () => {
           </div>
 
           {/* Service 2 */}
-          <div className="bg-white shadow-lg rounded-lg overflow-hidden transition-shadow duration-300 hover:shadow-2xl">
+          <div  id='maint' className="bg-white shadow-lg rounded-lg overflow-hidden transition-shadow duration-300 hover:shadow-2xl">
             <img
               src="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=300"
               alt="Website Maintenance"
@@ -37,7 +37,7 @@ const Services = () => {
             />
             <div className="p-6">
               <i className="fas fa-tools text-green-600 text-3xl mb-4"></i>
-              <div className="font-semibold text-xl mb-2">Website Maintenance</div>
+              <div className="font-semibold text-xl mb-2 ">Website Maintenance</div>
               <p className="text-gray-600">
                 Ensuring your website stays updated, secure, and performs optimally at all times.
               </p>
@@ -45,7 +45,7 @@ const Services = () => {
           </div>
 
           {/* Service 3 */}
-          <div className="bg-white shadow-lg rounded-lg overflow-hidden transition-shadow duration-300 hover:shadow-2xl">
+          <div id='free' className="bg-white shadow-lg rounded-lg overflow-hidden transition-shadow duration-300 hover:shadow-2xl">
             <img
               src="https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=300"
               alt="Freelance Projects"

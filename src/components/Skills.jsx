@@ -13,7 +13,7 @@ const skills = [
   const Skills = () => {
     return (
       <section
-        className="w-full min-h-screen bg-gray-300 py-16 px-4"
+        className="w-full min-h-screen sm:min-h-0 md:min-h-0 lg:h-180 bg-gray-300 py-16 px-4"
         id="skills"
       >
         <div className="max-w-6xl mx-auto">
