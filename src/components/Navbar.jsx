@@ -84,30 +84,33 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="fixed top-0 left-0 h-full w-64 bg-gray-800 px-6 pt-4 pb-6 space-y-6 text-lg font-semibold z-40 md:hidden">
-          <Link to="/#home" smooth className={navLinkClasses('home')} onClick={() => setIsMenuOpen(false)}>Home</Link>
-          <Link to="/#about" smooth className={navLinkClasses('about')} onClick={() => setIsMenuOpen(false)}>About</Link>
+  <div className="fixed top-0 left-0 h-full w-full bg-gray-900 bg-opacity-95 px-6 pt-20 pb-6 flex flex-col space-y-6 text-lg font-semibold z-40 md:hidden">
+    <Link to="/#home" smooth className={navLinkClasses('home')} onClick={() => setIsMenuOpen(false)}>Home</Link>
+    <Link to="/#about" smooth className={navLinkClasses('about')} onClick={() => setIsMenuOpen(false)}>About</Link>
 
-          <button
-            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className="block text-white hover:text-red-300 w-full text-left focus:outline-none"
-          >
-            Services <span className="float-right">{isDropdownOpen ? '▲' : '▼'}</span>
-          </button>
+    {/* Dropdown Toggle */}
+    <button
+      onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+      className="text-white hover:text-red-300 text-left focus:outline-none"
+    >
+      Services <span className="float-right">{isDropdownOpen ? '▲' : '▼'}</span>
+    </button>
 
-          <div className={`pl-4 mt-2 space-y-2 overflow-hidden transition-all duration-500 ease-in-out ${
-            isDropdownOpen ? 'max-h-40' : 'max-h-0'
-          }`}>
-            <Link to="/#services" smooth className={navLinkClasses('services')} onClick={() => setIsMenuOpen(false)}>Website Designing</Link>
-            <Link to="/#services" smooth className={navLinkClasses('services')} onClick={() => setIsMenuOpen(false)}>Website Maintenance</Link>
-            <Link to="/#services" smooth className={navLinkClasses('services')} onClick={() => setIsMenuOpen(false)}>SEO Optimization</Link>
-          </div>
+    {/* Dropdown Content */}
+    <div className={`pl-4 transition-all duration-300 ease-in-out overflow-hidden ${
+      isDropdownOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+    }`}>
+      <Link to="/#services" smooth className="block py-2 text-white hover:text-red-300" onClick={() => setIsMenuOpen(false)}>Website Designing</Link>
+      <Link to="/#services" smooth className="block py-2 text-white hover:text-red-300" onClick={() => setIsMenuOpen(false)}>Website Maintenance</Link>
+      <Link to="/#services" smooth className="block py-2 text-white hover:text-red-300" onClick={() => setIsMenuOpen(false)}>SEO Optimization</Link>
+    </div>
 
-          <Link to="/#skills" smooth className={navLinkClasses('skills')} onClick={() => setIsMenuOpen(false)}>Skills</Link>
-          <Link to="/#projects" smooth className={navLinkClasses('projects')} onClick={() => setIsMenuOpen(false)}>Projects</Link>
-          <Link to="/#contact" smooth className={navLinkClasses('contact')} onClick={() => setIsMenuOpen(false)}>Contact</Link>
-        </div>
-      )}
+    <Link to="/#skills" smooth className={navLinkClasses('skills')} onClick={() => setIsMenuOpen(false)}>Skills</Link>
+    <Link to="/#projects" smooth className={navLinkClasses('projects')} onClick={() => setIsMenuOpen(false)}>Projects</Link>
+    <Link to="/#contact" smooth className={navLinkClasses('contact')} onClick={() => setIsMenuOpen(false)}>Contact</Link>
+  </div>
+)}
+
     </nav>
   );
 };
