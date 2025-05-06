@@ -22,13 +22,14 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="h-screen bg-cover bg-center flex items-center justify-between relative "
+      className="h-screen bg-cover bg-center flex items-center justify-between relative"
       style={{
         backgroundImage: `url(${wallpaper})`, // Your background image
       }}
     >
-      <div className="w-full ml-20 max-w-screen-xl px-6 sm:px-8 md:px-16 flex flex-col items-start text-left text-white">
-        <div className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-2">Hi,</div>
+      <div className="w-full ml-[20px] sm:ml-10 md:ml-20 max-w-screen-xl pl-4 sm:px-8 md:px-16 flex flex-col items-start text-left text-white">
+
+       <div className="text-3xl sm:text-4xl  md:text-5xl font-semibold mb-2">Hi,</div>
         <div className="text-5xl sm:text-6xl md:text-6xl py-3 font-bold my-2">
           I'm <span className="text-white">Suraj</span>
         </div>
