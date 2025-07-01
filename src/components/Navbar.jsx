@@ -54,7 +54,7 @@ const Navbar = () => {
           <Link to="/#home" className="flex items-center space-x-1">
             <span className="pl-2 pr-2">
               codex
-              <span className={`pl-1 pr-1 ${isScrolled ? 'text-orange-200' : 'text-red-600'}`}>
+              <span className={`pl-1 pr-1 ${isScrolled ? 'text-orange-300' : 'text-red-600'}`}>
                 suraj
               </span>
             </span>
