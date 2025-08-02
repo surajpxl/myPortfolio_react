@@ -134,6 +134,15 @@ const Navbar = () => {
           >
             About
           </Link>
+
+          <Link
+            to="/#skills"
+            smooth
+            className={navLinkClasses('skills')}
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Skills
+          </Link>
           <Link
             to="/#projects"
             smooth
@@ -142,7 +151,6 @@ const Navbar = () => {
           >
             Projects
           </Link>
-
           {/* Dropdown Toggle */}
           <button
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -183,14 +191,6 @@ const Navbar = () => {
             </Link>
           </div>
 
-          <Link
-            to="/#skills"
-            smooth
-            className={navLinkClasses('skills')}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Skills
-          </Link>
           <Link
             to="/#contact"
             smooth
