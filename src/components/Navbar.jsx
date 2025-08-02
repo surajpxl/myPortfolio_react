@@ -83,15 +83,15 @@ const Navbar = () => {
               About
             </Link>
           </li>
+          <li>
+            <Link smooth to="/#skills" className={navLinkClasses('skills')}>
+              Skills
+            </Link>
+          </li>
           
           <li>
             <Link smooth to="/#projects" className={navLinkClasses('projects')}>
               Projects
-            </Link>
-          </li>
-          <li>
-            <Link smooth to="/#skills" className={navLinkClasses('skills')}>
-              Skills
             </Link>
           </li>
           <li>
