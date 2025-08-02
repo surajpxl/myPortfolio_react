@@ -83,9 +83,10 @@ const Navbar = () => {
               About
             </Link>
           </li>
+          
           <li>
-            <Link smooth to="/#services" className={navLinkClasses('services')}>
-              Services
+            <Link smooth to="/#projects" className={navLinkClasses('projects')}>
+              Projects
             </Link>
           </li>
           <li>
@@ -94,10 +95,10 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link smooth to="/#projects" className={navLinkClasses('projects')}>
-              Projects
+            <Link smooth to="/#services" className={navLinkClasses('services')}>
+              Services
             </Link>
-          </li>
+            </li>
           <li>
             <Link smooth to="/#contact" className={navLinkClasses('contact')}>
               Contact
@@ -132,6 +133,14 @@ const Navbar = () => {
             onClick={() => setIsMenuOpen(false)}
           >
             About
+          </Link>
+          <Link
+            to="/#projects"
+            smooth
+            className={navLinkClasses('projects')}
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Projects
           </Link>
 
           {/* Dropdown Toggle */}
@@ -181,14 +190,6 @@ const Navbar = () => {
             onClick={() => setIsMenuOpen(false)}
           >
             Skills
-          </Link>
-          <Link
-            to="/#projects"
-            smooth
-            className={navLinkClasses('projects')}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Projects
           </Link>
           <Link
             to="/#contact"
