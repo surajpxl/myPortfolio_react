@@ -9,11 +9,13 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 // import shake from './styles/shake.css'; // Assuming you have a shake.css file for animations
 
 function App() {
   return (
     <Router>
+      <ScrollToTop/>
       <Navbar />
       <Home />
       <About />
