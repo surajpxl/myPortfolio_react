@@ -23,7 +23,7 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="h-screen bg-cover bg-center flex items-center justify-between relative"
+      className="h-[95vh] bg-cover bg-center flex items-center justify-between relative"
       style={{
         backgroundImage: `url(${wallpaper})`, // Your background image
       }}
