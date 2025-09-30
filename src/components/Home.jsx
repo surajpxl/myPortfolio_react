@@ -1,11 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Typed from "typed.js";
-import {
-  FaTwitter,
-  FaLinkedin,
-  FaGithub,
-  FaInstagram,
-} from "react-icons/fa";
+import { FaTwitter, FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import wallpaper from "../assets/images/wallpaper.jpg";
 import animatedPNG from "../assets/images/bgg4.png";
 import Skeleton from "./Skeleton";
@@ -14,7 +9,7 @@ const Home = () => {
   const typingRef = useRef(null);
   const [loading, setLoading] = useState(true);
 
-  // Simulate loading (you can replace with real data/image load check)
+  // Simulate loading
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
@@ -28,7 +23,6 @@ const Home = () => {
         backSpeed: 60,
         loop: true,
       });
-
       return () => typed.destroy();
     }
   }, [loading]);
@@ -39,6 +33,7 @@ const Home = () => {
       className="h-[95vh] bg-cover bg-center flex items-center justify-between relative"
       style={{ backgroundImage: `url(${wallpaper})` }}
     >
+      {/* LEFT SIDE */}
       <div className="w-full ml-[20px] sm:ml-10 md:ml-20 max-w-screen-xl pl-4 sm:px-8 md:px-16 flex flex-col items-start text-left text-white">
         {loading ? (
           <>
@@ -70,7 +65,7 @@ const Home = () => {
               Contact
             </a>
 
-            {/* Social Media Icons */}
+            {/* Social Media */}
             <div className="flex space-x-6 mt-16">
               <a
                 href="https://www.instagram.com/codexsuraj/"
@@ -109,7 +104,7 @@ const Home = () => {
         )}
       </div>
 
-      {/* Right side animated PNG / Skeleton */}
+      {/* RIGHT SIDE */}
       <div className="hidden md:flex w-full md:w-1/2 justify-center items-center">
         {loading ? (
           <Skeleton className="w-80 h-80 rounded-full" />
