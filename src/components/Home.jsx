@@ -1,3 +1,5 @@
+// 
+
 import React, { useEffect, useRef, useState } from "react";
 import Typed from "typed.js";
 import { FaTwitter, FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
