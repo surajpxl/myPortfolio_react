@@ -6,12 +6,17 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const [loading, setLoading] = useState(true);
+
+  // Simulate loading
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1500);
+    return () => clearTimeout(timer);
+  }, []);
 
   // Scroll background change
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 0);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -42,6 +47,30 @@ const Navbar = () => {
       activeSection === id ? 'text-red-400 underline underline-offset-4' : 'text-white'
     }`;
 
+  if (loading) {
+    // Skeleton Loader UI
+    return (
+      <nav className="fixed top-0 left-0 w-full z-50 bg-gray-700 shadow-md">
+        <div className="max-w-screen-xl mx-auto px-6 py-4 flex justify-between items-center animate-pulse">
+          {/* Logo Skeleton */}
+          <div className="h-6 w-24 bg-gray-500 rounded"></div>
+
+          {/* Nav Links Skeleton */}
+          <div className="hidden md:flex space-x-10">
+            <div className="h-5 w-16 bg-gray-500 rounded"></div>
+            <div className="h-5 w-16 bg-gray-500 rounded"></div>
+            <div className="h-5 w-16 bg-gray-500 rounded"></div>
+            <div className="h-5 w-16 bg-gray-500 rounded"></div>
+          </div>
+
+          {/* Hamburger Skeleton */}
+          <div className="md:hidden h-6 w-6 bg-gray-500 rounded"></div>
+        </div>
+      </nav>
+    );
+  }
+
+  // Real Navbar after loading
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
@@ -54,7 +83,11 @@ const Navbar = () => {
           <Link to="/#home" className="flex items-center space-x-1">
             <span className="pl-2 pr-2">
               codex
-              <span className={`pl-1 pr-1 ${isScrolled ? 'text-orange-300' : 'text-red-600'}`}>
+              <span
+                className={`pl-1 pr-1 ${
+                  isScrolled ? 'text-orange-300' : 'text-red-600'
+                }`}
+              >
                 suraj
               </span>
             </span>
@@ -88,7 +121,6 @@ const Navbar = () => {
               Skills
             </Link>
           </li>
-          
           <li>
             <Link smooth to="/#projects" className={navLinkClasses('projects')}>
               Projects
@@ -98,7 +130,7 @@ const Navbar = () => {
             <Link smooth to="/#services" className={navLinkClasses('services')}>
               Services
             </Link>
-            </li>
+          </li>
           <li>
             <Link smooth to="/#contact" className={navLinkClasses('contact')}>
               Contact
@@ -110,12 +142,11 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="fixed top-0 left-0 h-full w-full bg-gray-900 bg-opacity-95 px-6 pt-20 pb-6 flex flex-col space-y-6 text-lg font-semibold z-40 md:hidden">
-          {/* Close Icon */}
           <button
             onClick={() => setIsMenuOpen(false)}
             className="text-white text-3xl absolute top-6 right-6"
           >
-            <i className="fas fa-times"></i> {/* Close Icon */}
+            <i className="fas fa-times"></i>
           </button>
 
           <Link
@@ -134,7 +165,6 @@ const Navbar = () => {
           >
             About
           </Link>
-
           <Link
             to="/#skills"
             smooth
@@ -151,7 +181,8 @@ const Navbar = () => {
           >
             Projects
           </Link>
-          {/* Dropdown Toggle */}
+
+          {/* Dropdown */}
           <button
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
             className="text-white hover:text-red-300 text-left focus:outline-none"
@@ -159,7 +190,6 @@ const Navbar = () => {
             Services <span className="float-right">{isDropdownOpen ? '▲' : '▼'}</span>
           </button>
 
-          {/* Dropdown Content */}
           <div
             className={`pl-4 transition-all duration-300 ease-in-out overflow-hidden ${
               isDropdownOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
