@@ -8,16 +8,19 @@ import {
 } from "react-icons/fa";
 import wallpaper from "../assets/images/wallpaper.jpg";
 import animatedPNG from "../assets/images/bgg4.png";
-import Skeleton from "./Skeleton"; // import skeleton
+import Skeleton from "./Skeleton";
 
 const Home = () => {
   const typingRef = useRef(null);
   const [loading, setLoading] = useState(true);
 
+  // Simulate loading (you can replace with real data/image load check)
   useEffect(() => {
-    // simulate loading (e.g., image/font load)
     const timer = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
+  useEffect(() => {
     if (!loading) {
       const typed = new Typed(typingRef.current, {
         strings: ["Web Developer", "Web Designer", "Freelancer"],
@@ -25,21 +28,17 @@ const Home = () => {
         backSpeed: 60,
         loop: true,
       });
+
       return () => typed.destroy();
     }
-
-    return () => clearTimeout(timer);
   }, [loading]);
 
   return (
     <section
       id="home"
       className="h-[95vh] bg-cover bg-center flex items-center justify-between relative"
-      style={{
-        backgroundImage: `url(${wallpaper})`,
-      }}
+      style={{ backgroundImage: `url(${wallpaper})` }}
     >
-      {/* LEFT SIDE */}
       <div className="w-full ml-[20px] sm:ml-10 md:ml-20 max-w-screen-xl pl-4 sm:px-8 md:px-16 flex flex-col items-start text-left text-white">
         {loading ? (
           <>
@@ -48,10 +47,9 @@ const Home = () => {
             <Skeleton className="w-60 h-10 mb-4" />
             <Skeleton className="w-32 h-12 mb-6 rounded-lg" />
             <div className="flex gap-4 mt-8">
-              <Skeleton className="w-10 h-10 rounded-full" />
-              <Skeleton className="w-10 h-10 rounded-full" />
-              <Skeleton className="w-10 h-10 rounded-full" />
-              <Skeleton className="w-10 h-10 rounded-full" />
+              {[1, 2, 3, 4].map((i) => (
+                <Skeleton key={i} className="w-10 h-10 rounded-full" />
+              ))}
             </div>
           </>
         ) : (
@@ -72,7 +70,7 @@ const Home = () => {
               Contact
             </a>
 
-            {/* Social Media */}
+            {/* Social Media Icons */}
             <div className="flex space-x-6 mt-16">
               <a
                 href="https://www.instagram.com/codexsuraj/"
@@ -111,7 +109,7 @@ const Home = () => {
         )}
       </div>
 
-      {/* RIGHT SIDE */}
+      {/* Right side animated PNG / Skeleton */}
       <div className="hidden md:flex w-full md:w-1/2 justify-center items-center">
         {loading ? (
           <Skeleton className="w-80 h-80 rounded-full" />
