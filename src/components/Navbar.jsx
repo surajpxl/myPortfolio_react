@@ -48,27 +48,26 @@ const Navbar = () => {
     }`;
 
   if (loading) {
-    // Skeleton Loader UI
-    return (
-      <nav className="fixed top-0 left-0 w-full z-50 bg-gray-700 shadow-md">
-        <div className="max-w-screen-xl mx-auto px-6 py-4 flex justify-between items-center animate-pulse">
-          {/* Logo Skeleton */}
-          <div className="h-6 w-24 bg-gray-500 rounded"></div>
+  return (
+    <nav className="fixed top-0 left-0 w-full z-50 bg-gray-700 shadow-md">
+      <div className="max-w-screen-xl mx-auto px-6 py-4 flex justify-between items-center">
+        {/* Logo Skeleton */}
+        <div className="h-6 w-24 shimmer rounded"></div>
 
-          {/* Nav Links Skeleton */}
-          <div className="hidden md:flex space-x-10">
-            <div className="h-5 w-16 bg-gray-500 rounded"></div>
-            <div className="h-5 w-16 bg-gray-500 rounded"></div>
-            <div className="h-5 w-16 bg-gray-500 rounded"></div>
-            <div className="h-5 w-16 bg-gray-500 rounded"></div>
-          </div>
-
-          {/* Hamburger Skeleton */}
-          <div className="md:hidden h-6 w-6 bg-gray-500 rounded"></div>
+        {/* Nav Links Skeleton */}
+        <div className="hidden md:flex space-x-10">
+          <div className="h-5 w-16 shimmer rounded"></div>
+          <div className="h-5 w-16 shimmer rounded"></div>
+          <div className="h-5 w-16 shimmer rounded"></div>
+          <div className="h-5 w-16 shimmer rounded"></div>
         </div>
-      </nav>
-    );
-  }
+
+        {/* Hamburger Skeleton */}
+        <div className="md:hidden h-6 w-6 shimmer rounded"></div>
+      </div>
+    </nav>
+  );
+}
 
   // Real Navbar after loading
   return (
