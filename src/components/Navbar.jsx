@@ -214,7 +214,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
+  const [activeSection, setActiveSection] = useState("home");
   const [loading, setLoading] = useState(true);
 
   // Simulate loading
@@ -232,24 +232,27 @@ const Navbar = () => {
 
   // Track active section
   useEffect(() => {
-    const sections = document.querySelectorAll("section");
+  const sections = Array.from(document.querySelectorAll("section"));
 
-    const handleScroll = () => {
-      let current = "";
-      sections.forEach((section) => {
-        const top = window.scrollY;
-        const offset = section.offsetTop - 100;
-        const height = section.offsetHeight;
-        if (top >= offset && top < offset + height) {
-          current = section.getAttribute("id");
-        }
-      });
-      setActiveSection(current);
-    };
+  const handleScroll = () => {
+    let current = "home"; // default
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      // if section top is near top of viewport (adjust offset for navbar)
+      if (rect.top <= 120 && rect.bottom > 120) {
+        current = section.id || current;
+      }
+    });
+
+    setActiveSection(current);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  handleScroll(); // trigger on load
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
 
   const navLinkClasses = (id) =>
     `hover:text-red-400 transition duration-300 ${
@@ -278,11 +281,7 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-colors duration-500 ${
-        activeSection === "about" 
-        // activeSection === "projects" ||
-        // activeSection === "contact"
-          ? "bg-[#1E1E1E]/90 shadow-md" // Dark bg on white About
-          : isScrolled
+        isScrolled
           ? "bg-gradient-to-r from-[#8497FE] shadow-md"
           : "bg-transparent"
       }`}
@@ -295,7 +294,7 @@ const Navbar = () => {
               codex
               <span
                 className={`pl-1 pr-1 transition-colors duration-300 ${
-                  activeSection === "about" ? "text-orange-300" : "text-red-600"
+                  activeSection === "home" ? "text-orange-300" : "text-red-600"
                 }`}
               >
                 suraj
