@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import profileImg from "../assets/images/about.png";
 import resume from "../assets/images/Suraj_Gupta_Resume.pdf.pdf";
 import "../styles/shake.css"; // contains .shake class
-import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collision.jsx";
+import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collision";
 const About = () => {
   const typingRef = useRef(null);
 
@@ -22,9 +22,9 @@ const About = () => {
   }, []);
 
   return (
-<BackgroundBeamsWithCollision>
+    <BackgroundBeamsWithCollision>
 
-    <section className="py-16 w-full lg:h-180 bg-white" id="about">
+    <section className="py-16 w-full lg:h-screen bg-white" id="about">
       <div className="max-w-6xl mx-auto px-4 mt-10">
         {/* Animated Heading */}
         <motion.h2
@@ -110,7 +110,7 @@ const About = () => {
         </div>
       </div>
     </section>
-</BackgroundBeamsWithCollision>
+    </BackgroundBeamsWithCollision>
   );
 };
 

@@ -1,12 +1,11 @@
-//
-
+"use client";
 import React, { useEffect, useRef, useState } from "react";
 import Typed from "typed.js";
 import { FaTwitter, FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
-import wallpaper from "../assets/images/wallpaper.jpg";
 import animatedPNG from "../assets/images/bgg4.png";
 import Skeleton from "./Skeleton";
 
+import Galaxy from "./Galaxy";
 const Home = () => {
   const typingRef = useRef(null);
   const [loading, setLoading] = useState(true);
@@ -32,11 +31,45 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="h-[95vh] bg-cover bg-center flex items-center justify-between relative"
-      style={{ backgroundImage: `url(${wallpaper})` }}
+      className="min-h-screen relative z-10 flex items-center justify-between overflow-hidden bg-black"
     >
+      {/* Background Layer */}
+      {!loading && (
+        <div className="absolute inset-0 -z-10">
+          {/* Sparkle / Dotted BG */}
+          <div className="absolute inset-0 -z-10 bg-[#0a0a0f]">
+            <Galaxy
+              mouseRepulsion={true} // subtle cursor interaction
+              mouseInteraction={true} // follow cursor
+              density={2} // moderate particle count
+              particleSize={2} // small but visible
+              particleSpeed={0.6} // smooth motion
+              glowIntensity={0.3} // soft, crisp glow
+              saturation={1} // clear colors
+              hueShift={220} // cool professional tones
+              twinkle={true} // subtle twinkle
+              twinkleIntensity={0.3} // soft flicker
+              depthBlur={0} // remove blur for sharp particles
+              backgroundColor="#0d0d12" // dark professional background
+              colorPalette={["#5C27FF", "#00D1FF", "#FF5CBA"]} // minimal HDR colors
+              rotationSpeed={0.01} // very slow rotation
+              starField={true} // small stars for depth
+              starDensity={0.7} // minimal stars
+              starTwinkle={true} // soft twinkle
+              starTwinkleIntensity={0.2} // gentle flicker
+              sharpness={1} // maximum particle sharpness
+              shootingStars={true} // enable shooting stars
+              shootingStarFrequency={0.002} // how often stars shoot (adjust for subtlety)
+              shootingStarSpeed={3} // speed of shooting stars
+              shootingStarLength={150} // length of shooting star trail
+              shootingStarColor="#FFFFFF" // bright white for subtle realism
+            />
+          </div>
+        </div>
+      )}
+
       {/* LEFT SIDE */}
-      <div className="w-full ml-[20px] sm:ml-10 md:ml-20 max-w-screen-xl pl-4 sm:px-8 md:px-16 flex flex-col items-start text-left text-white">
+      <div className="relative z-10 w-full ml-[20px] sm:ml-10 md:ml-20 max-w-screen-xl pl-4 sm:px-8 md:px-16 flex flex-col items-start text-left text-white">
         {loading ? (
           <>
             <Skeleton className="w-24 h-8 mb-3" />
@@ -107,7 +140,7 @@ const Home = () => {
       </div>
 
       {/* RIGHT SIDE */}
-      <div className="hidden md:flex w-full md:w-1/2 justify-center items-center">
+      <div className="hidden md:flex w-full md:w-1/2 justify-center items-center relative z-10">
         {loading ? (
           <Skeleton className="w-80 h-80 rounded-full" />
         ) : (

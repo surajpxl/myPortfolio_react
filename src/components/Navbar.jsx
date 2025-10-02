@@ -278,9 +278,9 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-colors duration-500 ${
-        activeSection === "about" ||
-        activeSection === "projects" ||
-        activeSection === "contact"
+        activeSection === "about" 
+        // activeSection === "projects" ||
+        // activeSection === "contact"
           ? "bg-[#1E1E1E]/90 shadow-md" // Dark bg on white About
           : isScrolled
           ? "bg-gradient-to-r from-[#8497FE] shadow-md"
