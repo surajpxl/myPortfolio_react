@@ -232,27 +232,26 @@ const Navbar = () => {
 
   // Track active section
   useEffect(() => {
-  const sections = Array.from(document.querySelectorAll("section"));
+    const sections = Array.from(document.querySelectorAll("section"));
 
-  const handleScroll = () => {
-    let current = "home"; // default
+    const handleScroll = () => {
+      let current = "home"; // default
 
-    sections.forEach((section) => {
-      const rect = section.getBoundingClientRect();
-      // if section top is near top of viewport (adjust offset for navbar)
-      if (rect.top <= 120 && rect.bottom > 120) {
-        current = section.id || current;
-      }
-    });
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        // if section top is near top of viewport (adjust offset for navbar)
+        if (rect.top <= 120 && rect.bottom > 120) {
+          current = section.id || current;
+        }
+      });
 
-    setActiveSection(current);
-  };
+      setActiveSection(current);
+    };
 
-  window.addEventListener("scroll", handleScroll);
-  handleScroll(); // trigger on load
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
-
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // trigger on load
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinkClasses = (id) =>
     `hover:text-red-400 transition duration-300 ${
