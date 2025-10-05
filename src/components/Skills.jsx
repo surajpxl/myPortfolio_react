@@ -47,9 +47,8 @@ const Skills = () => {
               interactive web experiences that engage users and exceed
               expectations."
               <br />
-              <br />
-              I also leverage SQL expertise to seamlessly integrate data-driven
-              features into web applications.
+              <br />I also leverage SQL expertise to seamlessly integrate
+              data-driven features into web applications.
             </p>
             <a
               href="https://github.com/surajpxl"
@@ -66,7 +65,9 @@ const Skills = () => {
             {skills.map((skill, index) => (
               <div key={skill.name}>
                 <div className="flex justify-between mb-1">
-                  <span className="font-medium text-gray-800">{skill.name}</span>
+                  <span className="font-medium text-gray-800">
+                    {skill.name}
+                  </span>
                   <span className="text-sm text-gray-600">{skill.level}</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-1.5">
