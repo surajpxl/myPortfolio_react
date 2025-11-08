@@ -2,8 +2,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import Typed from "typed.js";
 import { FaTwitter, FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
-import animatedPNG from "../assets/images/bgg4.png";
+import animatedPNG from "../assets/images/bg4.png";
 import Skeleton from "./Skeleton";
+import bg from '../assets/images/bg3.jpg'
 
 import Galaxy from "./Galaxy";
 const Home = () => {
@@ -36,6 +37,7 @@ const Home = () => {
       {/* Background Layer */}
       {!loading && (
         <div className="absolute inset-0 -z-10">
+          {/* <img src={bg} alt="" /> */}
           {/* Sparkle / Dotted BG */}
           <div className="absolute inset-0 -z-10 bg-[#0a0a0f]">
             <Galaxy

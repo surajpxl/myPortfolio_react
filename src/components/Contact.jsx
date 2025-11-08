@@ -31,7 +31,7 @@ const Contact = () => {
       id="contact"
       className="bg-gray-100 py-16 w-screen overflow-hidden relative"
     >
-      {/* ✅ Toast Popup */}
+     {/*Toast Popup  */}
       <AnimatePresence>
         {toast.message && (
           <motion.div
