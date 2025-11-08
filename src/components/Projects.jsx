@@ -3,6 +3,14 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
+    title: "Blog App",
+    description:
+      "A Modern Blogging Platform",
+    image:
+      "https://images.pexels.com/photos/11677250/pexels-photo-11677250.jpeg",
+    link: "https://miniblog-frontend-lnds.onrender.com/",
+  },
+  {
     title: "Weather App",
     description:
       "A web application that provides real-time weather updates for any location using APIs.",
