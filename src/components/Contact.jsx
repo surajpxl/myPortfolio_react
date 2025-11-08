@@ -1,12 +1,53 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 
 const Contact = () => {
+  const [toast, setToast] = useState({ message: "", type: "" });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: new FormData(form),
+      headers: { Accept: "application/json" },
+    });
+
+    if (response.ok) {
+      setToast({ message: "✅ Message sent successfully!", type: "success" });
+      form.reset();
+    } else {
+      setToast({ message: "❌ Oops! Something went wrong.", type: "error" });
+    }
+
+    // Hide popup after 4 seconds
+    setTimeout(() => setToast({ message: "", type: "" }), 4000);
+  };
+
   return (
     <section
       id="contact"
-      className="bg-gray-100 py-16 w-screen overflow-hidden"
+      className="bg-gray-100 py-16 w-screen overflow-hidden relative"
     >
+      {/* ✅ Toast Popup */}
+      <AnimatePresence>
+        {toast.message && (
+          <motion.div
+            initial={{ opacity: 0, x: 100, y: 0 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 100 }}
+            transition={{ duration: 0.4 }}
+            className={`fixed top-6 right-6 z-50 px-6 py-4 rounded-lg shadow-lg text-white font-medium ${
+              toast.type === "success" ? "bg-green-600" : "bg-red-600"
+            }`}
+          >
+            {toast.message}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <div className="max-w-4xl mx-auto px-6">
         <motion.h2
           className="text-3xl font-semibold text-center text-gray-800 underline mt-6"
@@ -30,6 +71,7 @@ const Contact = () => {
         </motion.p>
 
         <motion.form
+          onSubmit={handleSubmit}
           action="https://formspree.io/f/mvgkjvvj"
           method="POST"
           className="space-y-6"
@@ -117,10 +159,7 @@ const Contact = () => {
           </p>
           <p className="text-lg text-gray-800">
             <strong>Phone:</strong>{" "}
-            <a
-              href="tel:+9119614132"
-              className="text-blue-600 hover:underline"
-            >
+            <a href="tel:+9119614132" className="text-blue-600 hover:underline">
               +91 9119614132
             </a>
           </p>
