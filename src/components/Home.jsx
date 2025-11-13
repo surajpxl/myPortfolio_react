@@ -4,7 +4,7 @@ import Typed from "typed.js";
 import { FaTwitter, FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import animatedPNG from "../assets/images/bg4.png";
 import Skeleton from "./Skeleton";
-import bg from '../assets/images/bg3.jpg'
+import bg from "../assets/images/bg3.jpg";
 
 import Galaxy from "./Galaxy";
 const Home = () => {
