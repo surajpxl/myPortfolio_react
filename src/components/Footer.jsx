@@ -1,6 +1,10 @@
 // File: Footer.jsx
 
 const Footer = () => {
+
+  const currentDate = new Date()
+  const year = currentDate.getFullYear()
+
   return (
     <footer className="bg-gray-800 text-white py-4 text-center">
       <span className="text-sm">
@@ -13,7 +17,7 @@ const Footer = () => {
         >
           codexsuraj
         </a>{" "}
-        | <span className="inline-block align-middle">&copy;</span> 2025 All
+        | <span className="inline-block align-middle">&copy;</span> {year} All
         rights reserved.
       </span>
     </footer>
