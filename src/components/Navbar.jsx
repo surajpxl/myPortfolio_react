@@ -285,7 +285,7 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-screen-xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="max-w-screen-xl mx-auto px-6 py-2 mb-2 flex justify-between items-center">
         {/* Logo */}
         <div className="text-white text-4xl font-bold">
           <Link to="/#home" className="flex items-center space-x-1">
@@ -296,7 +296,7 @@ const Navbar = () => {
                   activeSection === "home" ? "text-orange-300" : "text-red-600"
                 }`}
               >
-                suraj
+              suraj
               </span>
             </span>
           </Link>
