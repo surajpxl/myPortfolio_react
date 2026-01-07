@@ -20,7 +20,7 @@ const Home = () => {
   useEffect(() => {
     if (!loading) {
       const typed = new Typed(typingRef.current, {
-        strings: ["Web Developer", "Web Designer", "Freelancer"],
+        strings: ["MERN-Stack Developer", "React.js Developer", "Freelancer"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true,

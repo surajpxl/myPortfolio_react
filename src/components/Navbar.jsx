@@ -287,7 +287,7 @@ const Navbar = () => {
     >
       <div className="max-w-screen-xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
-        <div className="text-white text-3xl font-bold">
+        <div className="text-white text-4xl font-bold">
           <Link to="/#home" className="flex items-center space-x-1">
             <span className="pl-2 pr-2">
               codex
