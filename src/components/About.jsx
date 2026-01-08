@@ -10,7 +10,7 @@ const About = () => {
 
   useEffect(() => {
     const typed = new Typed(typingRef.current, {
-      strings: ["Web Developer", "Web Designer", "Freelancer"],
+      strings: ["Full-Stack Developer", "React.js Developer", "Freelancer"],
       typeSpeed: 100,
       backSpeed: 60,
       loop: true,
