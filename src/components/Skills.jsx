@@ -42,13 +42,9 @@ const Skills = () => {
               My creative skills & experiences.
             </h3>
             <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
-              "I bring creative flair and extensive experience to HTML, CSS,
-              JavaScript, and React development, crafting visually stunning and
-              interactive web experiences that engage users and exceed
-              expectations."
-              <br />
-              <br />I also leverage SQL expertise to seamlessly integrate
-              data-driven features into web applications.
+            I specialize in building modern, responsive, and scalable web applications using HTML, CSS, JavaScript, and React.js. My focus is on creating clean user interfaces and smooth user experiences that work well across all devices.
+<br /> <br />
+On the backend, I work with Node.js, Express, and MongoDB to develop secure and efficient APIs, allowing web applications to handle data, authentication, and real-world business logic smoothly.
             </p>
             <a
               href="https://github.com/surajpxl"

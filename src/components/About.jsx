@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import Typed from "typed.js";
-import { motion } from "framer-motion";
-import profileImg from "../assets/images/about.png";
+import  {motion} from 'framer-motion'
+import profileImg from "../assets/images/aboutImg2.jpg";
 import resume from "../assets/images/Suraj_Gupta_Resume.pdf.pdf";
 import "../styles/shake.css"; // contains .shake class
 import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collision";
@@ -10,7 +10,7 @@ const About = () => {
 
   useEffect(() => {
     const typed = new Typed(typingRef.current, {
-      strings: ["Full-Stack Developer", "React.js Developer", "Freelancer"],
+      strings: ["Full-Stack Developer"],
       typeSpeed: 100,
       backSpeed: 60,
       loop: true,
@@ -48,7 +48,7 @@ const About = () => {
               <img
                 src={profileImg}
                 alt="Profile"
-                className="w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-xl object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
+                className=" h-72 sm:w-80 sm:h-90 md:w-96 md:h-110 rounded-xl object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
               />
             </motion.div>
 
@@ -61,25 +61,22 @@ const About = () => {
               viewport={{ once: true, amount: 0.3 }}
             >
               <div className="text-2xl sm:text-3xl font-bold mb-4">
-                I'm Suraj and I'm a{" "}
+                {" "}🧑‍💻
                 <span ref={typingRef} className="text-red-600"></span>
               </div>
 
               <div className="text-base sm:text-lg mb-4 space-y-4">
                 <p>
-                  Hey there! I'm Suraj Gupta, a web developer dedicated to
-                  crafting seamless online experiences. I thrive on turning
-                  ideas into reality through clean code and creative solutions.
-                </p>
-                <p>
-                  I specialize in designing dynamic and user-friendly websites,
-                  prioritizing performance and accessibility in every project.
-                  I'm passionate about collaboration, continuous learning, and
-                  staying up-to-date with the latest technologies.
-                </p>
-                <p>
-                  I'm also proficient in UI/UX design principles and
-                  implementation (Figma).
+                  Hi, I’m Suraj Gupta, a MERN Stack Developer focused on
+                  building real-world web applications. I work with React.js,
+                  JavaScript, Node.js, MongoDB, and Tailwind CSS to create fast,
+                  responsive, and user-friendly interfaces. <br /> <br /> I’ve built a
+                  full-stack LMS featuring authentication, role-based access
+                  (Admin & Student), and Razorpay subscription payments, giving
+                  me hands-on experience with REST APIs, JWT authentication, and
+                  SaaS-style architecture. I’m currently seeking internship or
+                  junior developer roles where I can learn, contribute, and grow
+                  as a developer...
                 </p>
               </div>
 
